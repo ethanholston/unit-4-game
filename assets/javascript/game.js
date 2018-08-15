@@ -1,26 +1,26 @@
 //Variables
 var chars = [{
     hp: 100,
-    ap: 7,
-    cp: 25,
+    ap: 8,
+    cp: 20,
     img: "<img src='assets/images/sakura.png'/>"
 },
 {
     hp: 125,
-    ap: 6,
-    cp: 10,
+    ap: 7,
+    cp: 8,
     img: "<img src='assets/images/sagat.png'/>"
 },
 {
     hp: 110,
-    ap: 9,
-    cp: 15,
+    ap: 10,
+    cp: 12,
     img: "<img src='assets/images/ryu.png'/>"
 },
 {
     hp: 115,
-    ap: 8,
-    cp: 20,
+    ap: 9,
+    cp: 16,
     img: "<img src='assets/images/abigail.png'/>"
 }];
 
@@ -34,6 +34,9 @@ var charHP; //current HP of character chosen
 var defCP; //current counter power of the defender
 var defHP; //current hp of defender
 var defenders = []; //array to hold all 3 defender objects
+var defenderAlive;
+var playerAlive;
+var gameOver;
 
 //Functions
 
@@ -44,6 +47,8 @@ function gameSetup(){
     $("#char-c").html(chars[2].img);
     $("#char-d").html(chars[3].img);
     charChosenBool = false;
+    playerAlive = true;
+    defenderAlive = true;
 }
 
 //charater selection. set charChosen to the selected char, set charAP, apBase, charHP to charChosen attributes. set defenders array.
@@ -59,6 +64,7 @@ function charSelection(){
     $("#char-b").on("click", function(){
         charChosen = chars[1];
         charAP = charChosen.ap;
+        apBase = charChosen.ap;
         charHP = charChosen.hp;
         defenders = [chars[0], chars[2], chars[3]];
         setHTML();
@@ -66,6 +72,7 @@ function charSelection(){
     $("#char-c").on("click", function(){
         charChosen = chars[2];
         charAP = charChosen.ap;
+        apBase = charChosen.ap;
         charHP = charChosen.hp;
         defenders = [chars[0], chars[1], chars[3]];
         setHTML();
@@ -73,6 +80,7 @@ function charSelection(){
     $("#char-d").on("click", function(){
         charChosen = chars[3];
         charAP = charChosen.ap;
+        apBase = charChosen.ap;
         charHP = charChosen.hp;
         defenders = [chars[0], chars[1], chars[2]];
         setHTML();
@@ -124,27 +132,34 @@ function attackSetup(){
 
 //
 function attack(){
-    if(defHP > 0 && charHP > 0){
-        $("#attackBTN").on("click", function(){
+    $("#attackBTN").on("click", function(){
+        if(defHP > 0 && charHP > 0){
             defHP -= charAP;
             charAP += apBase;
-            charHP -= defCP;
-            console.log(defHP);
             console.log(charAP);
-            console.log(charHP);
-        });
-    } 
-    else if(charHP > 0 && defHP <=0){
-        $("#defender").html("");
-        chooseOpp();
-    } else{alert("Game Over")}
+            charHP -= defCP;
+            console.log("DefHP" + defHP + "charHP" + charHP);
+            if(defHP <= 0){
+                $("#defender").html("");
+                var x = defenders.indexOf(currentDef);
+                if(x >=0 ){
+                defenders[x] = "";
+                }
+                console.log(defenders);
+            }
+            if(charHP <= 0){
+                alert("Game Over");
+                gameOver = true;
+            }
+            // if
+        }
+    });
 }
 function gamePlay(){
     gameSetup();
     charSelection();
     chooseOpp();
     attackSetup();
-    // attack();
 }
 
 
