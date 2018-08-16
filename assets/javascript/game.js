@@ -52,7 +52,7 @@ function gameSetup(){
 }
 
 //charater selection. set charChosen to the selected char, set charAP, apBase, charHP to charChosen attributes. set defenders array.
-function charSelection(){
+// function charSelection(){
     $("#char-a").on("click", function(){
         charChosen = chars[0];
         charAP = charChosen.ap;
@@ -85,7 +85,7 @@ function charSelection(){
         defenders = [chars[0], chars[1], chars[2]];
         setHTML();
     });
-}
+// }
 
 //updates the HTML to move chars after selection
 function setHTML(){
@@ -98,24 +98,30 @@ function setHTML(){
 }
 
 //moves selected defender to defender area and copies defender object into currentDef
-function chooseOpp(){
+// function chooseOpp(){
     oppChosenBool = false;
     $("#defender-1").on("click", function(){
         $("#defender").html(defenders[0].img);
         $("#defender-1").html("");
+        $("#defender-2").html(defenders[1].img);
+        $("#defender-3").html(defenders[2].img);
         currentDef = defenders[0];
     });
     $("#defender-2").on("click", function(){
         $("#defender").html(defenders[1].img);
+        $("#defender-1").html(defenders[0].img);
         $("#defender-2").html("");
+        $("#defender-3").html(defenders[2].img);
         currentDef = defenders[1];
     });
     $("#defender-3").on("click", function(){
         $("#defender").html(defenders[2].img);
+        $("#defender-1").html(defenders[0].img);
+        $("#defender-2").html(defenders[1].img);        
         $("#defender-3").html("");
         currentDef = defenders[2];
     });
-}
+// }
 
 //set HP and CP for the current defender
 function attackSetup(){
@@ -125,14 +131,12 @@ function attackSetup(){
         console.log(chars);
         defHP = currentDef.hp;
         defCP = currentDef.cp;
-        attack();
     });
 
 } 
 
 //
-function attack(){
-    $("#attackBTN").on("click", function(){
+$("#attackBTN").on("click", function(){
         if(defHP > 0 && charHP > 0){
             defHP -= charAP;
             charAP += apBase;
@@ -153,12 +157,12 @@ function attack(){
             }
             // if
         }
-    });
-}
+});
+
 function gamePlay(){
     gameSetup();
-    charSelection();
-    chooseOpp();
+    // charSelection();
+    // chooseOpp();
     attackSetup();
 }
 
