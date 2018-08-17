@@ -1,0 +1,28 @@
+.char-img{
+    border: 20px solid black;
+    outline: 5px solid red;
+    
+}
+
+.char-name{
+    margin-top: 0;
+    position: absolute;
+    color: white;
+    font-weight: 800;
+    width: 170px;
+    text-align: center;
+}
+
+.char-hp{
+    margin-bottom: 0;
+    /* position: relative; */
+    /* color: white; */
+    font-weight: 800;
+    width: 170px;
+    text-align: center;
+}
+
+
+.char-container{
+    margin-right: 20px;
+}
