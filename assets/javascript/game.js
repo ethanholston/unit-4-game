@@ -220,6 +220,9 @@ $(document).on("click", "#attackBTN", function(){
                 $("#attack1").text("You were defeated. Press restart to play again");
                 $("#attack2").empty();
                 $("#restart").html("<button>Restart</button>");
+                $("#defender-1").off('click');
+                $("#defender-2").off('click');
+                $("#defender-3").off('click');
             }
             if(defenders[0] == "" && defenders[1] == "" && defenders[2] == ""){
                 $("#attack1").text("You won! Press restart to play again");
