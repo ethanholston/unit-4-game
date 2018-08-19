@@ -15,8 +15,6 @@
     margin: 0;
 }
 
-
-
 .char-hp{
     bottom: 2px;
     color: white;
@@ -76,6 +74,11 @@ body{
     background-image: url("../images/background.png");
     width: 750%;
     height: 100%;
+}
+
+#restart{
+    position: absolute;
+    bottom: 25px;
 }
 
 
