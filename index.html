@@ -13,26 +13,52 @@
 <body>
     <span class="char-container">
         <span id="char-a-name" class="char-name"></span>
-        <span class="char-hp" id="char-a-hp">
-        <span id="char-a"></span></span>
-
+        <span id="char-a"><span class="char-hp" id="char-a-hp"></span></span>
     </span>
     <span class="char-container">
-        <span class="char-name">Ryu</span>
-        <span class="char-hp" id="char-b-hp">
-            <span id="char-b"></span>
-        </span>
+        <span id="char-b-name" class="char-name"></span>
+        <span id="char-b"><span class="char-hp" id="char-b-hp"></span></span>
     </span>    
-    <span class="char-container"><span class="char-name">Sagat</span><span class="char-hp" id="char-c-hp"><span id="char-c"></span></span></span>
-    <span class="char-container"><span class="char-name">Abigail</span><span class="char-hp" id="char-d-hp"><span id="char-d"></span></span></span>
-    <h2>Your character:</h2><br>
-    <span id="player"></span>
+    <span class="char-container">
+        <span id="char-c-name" class="char-name"></span>
+        <span id="char-c"><span class="char-hp" id="char-c-hp"></span></span>
+    </span>
+    <span class="char-container">
+            <span id="char-d-name" class="char-name"></span>
+            <span id="char-d"><span class="char-hp" id="char-d-hp"></span></span>
+    </span>
+    <h2 id="your-character">Your character:</h2><br>
+    <span id="player">
+        <span id="player-name" class="char-name"></span>
+        <span id="player-img"><span class="char-hp" id="player-hp"></span></span>
+    </span>
     <h2>Enemies available to attack</h2>
-    <span class="defenders" id="defender-1"></span><span class="defenders" id="defender-2"></span><span class="defenders" id="defender-3"></span>
+    <span id="defender-container">    
+        <span class="defenders" id="defender-1">
+            <span id="defender-1-name" class="char-name"></span>
+            <span id="defender-1-img"><span class="char-hp" id="defender-1-hp"></span></span>
+        </span>
+        <span class="defenders" id="defender-2">
+            <span id="defender-2-name" class="char-name"></span>
+            <span id="defender-2-img"><span class="char-hp" id="defender-2-hp"></span></span>
+        </span>
+        <span class="defenders" id="defender-3">
+            <span id="defender-3-name" class="char-name"></span>
+            <span id="defender-3-img"><span class="char-hp" id="defender-3-hp"></span></span>
+        </span>
+    </span>
     <h2>Fight section</h2>
     <button id="attackBTN">Attack</button><br>
     <h2>Defender</h2>
-    <span id="defender"></span>
+    <span class="defend" id="defender">
+        <span class="defenders"><span id="defender-name" class="char-name"></span>
+        <span id="defender-img"><span class="char-hp" id="defender-hp"></span></span></span></span>
+        <p id="attack1"></p>
+        <p id="attack2"></p>
+        <!-- <button id=restart>Restart</button> -->
+    </span>
+    
+    
 </body>
 
 

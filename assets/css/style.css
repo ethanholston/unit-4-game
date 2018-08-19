@@ -1,6 +1,7 @@
 .char-img{
     border: 20px solid black;
     outline: 5px solid red;
+    margin: 0;
     
 }
 
@@ -11,18 +12,71 @@
     font-weight: 800;
     width: 170px;
     text-align: center;
+    margin: 0;
 }
 
+
+
 .char-hp{
-    margin-bottom: 0;
-    /* position: relative; */
-    /* color: white; */
+    bottom: 2px;
+    color: white;
     font-weight: 800;
     width: 170px;
     text-align: center;
+    position: absolute;
 }
-
-
 .char-container{
     margin-right: 20px;
+    position: relative;
 }
+
+.defenders{
+    margin-right: 20px;
+    position: relative;
+    height: 180px;
+}
+
+#player{
+    margin-right: 20px;
+    position: relative;
+}
+
+
+#player{
+    margin-top: -15px;
+}
+
+#your-character{
+    margin-bottom: 0px;
+}
+
+.defend{
+    margin-right: 20px;
+    position: absolute;
+    height: 200px;
+}
+
+#attack1{
+    position: absolute;
+    bottom: 50px;
+    white-space: nowrap;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+#attack2{
+    position: absolute;
+    bottom: 25px;
+    white-space: nowrap;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+body{
+    background-image: url("../images/background.png");
+    width: 100%;
+    height: 100%;
+}
+
+
+
