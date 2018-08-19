@@ -44,7 +44,7 @@ var charAP; //var to hold char attack power - same reason
 
 //Functions
 
-//setup game by putting all char imgs at top of page. set char name, hp. 
+//setup game by putting all char imgs at top of page. set char name, hp. and other html
 function gameSetup(){
     $("#char-a").html("<span class='char-hp' id='char-a-hp'></span>" + chars[0].img);
     $("#char-a-name").text(chars[0].name);
@@ -58,6 +58,9 @@ function gameSetup(){
     $("#char-d").html("<span class='char-hp' id='char-d-hp'></span>" + chars[3].img);
     $("#char-d-name").text(chars[3].name);
     $("#char-d-hp").text(chars[3].hp);
+    $("#chooseChar").text("Choose your character");
+    $("#your-character").empty();
+    $("#enemies").empty();
     $("#defender-name").empty(); //only necessary after restart. empties defender container
     $("#defender-img").empty();
     $("#restart").empty(); //clear restart button after restart
@@ -131,6 +134,9 @@ function setHtml(arg){
             $("#defender-img").html("<span class='char-hp' id='defender-hp'></span>" + currentDef.img);
             $("#defender-name").text(currentDef.name);
             $("#defender-hp").text(currentDef.hp);
+            $("#fight-section").text("Fight area");
+            $("#attackBTN").html("<button>Attack</button>");
+            $("#defenderTitle").text("Defender");
             break;
         case "player":
             $("#chooseChar").empty(); //clears Choose character notification from screen
@@ -192,7 +198,7 @@ function oppSelect(){
 }
 
 //set HP and CP for the current defender
-$("#attackBTN").on("click", function(){
+$(document).on("click", "#attackBTN", function(){
     if(opponentSelected == true){    
         if(defHP > 0 && charHP > 0){
             defHP -= charAP;
