@@ -1,7 +1,7 @@
 //Variables
 const chars = [{
     name: "Sakura",
-    hp: 300,
+    hp: 120,
     ap: 8,
     cp: 20,
     img: "<img class='char-img' src='assets/images/sakura.png'/>"
