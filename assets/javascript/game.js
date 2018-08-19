@@ -61,6 +61,9 @@ function gameSetup(){
     $("#chooseChar").text("Choose your character");
     $("#your-character").empty();
     $("#enemies").empty();
+    $("#fight-section").empty();
+    $("#defenderTitle").empty();
+    $("#attackBTN").empty();
     $("#defender-name").empty(); //only necessary after restart. empties defender container
     $("#defender-img").empty();
     $("#restart").empty(); //clear restart button after restart
